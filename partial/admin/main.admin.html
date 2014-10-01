@@ -1,0 +1,17 @@
+<div class="" ng-controller="AdminCtrl as admin">
+    Tea Name: <input ng-model="tea.name">
+    <hr class="large-12">
+    Tea Price: <input ng-model="tea.price">
+    <hr class="large-12">
+    Tea Wholesale Price: <input ng-model="tea.wholesalePrice">
+    <hr class="large-12">
+    Tea Description: <input ng-model="tea.description">
+    <hr class="large-12">
+    Tea Benefits: <input ng-model="tea.benefits">
+    <hr class="large-12">
+    Tea Images: <input ng-model="tea.images">
+    <hr class="large-12">
+    <button ng-click="main.api.create.tea(tea.name, tea.price, tea.wholesalePrice, tea.description, tea.benefits, tea.images)">Push it real good</button>
+
+
+</div>
