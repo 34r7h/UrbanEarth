@@ -5,8 +5,8 @@ function TeaCtrl($scope, $state, $firebase){
 		var itemID = snapshot.val();
 		var itemRef = new Firebase("https://urban.firebaseio.com/teas/"+itemID);
 		var sync = $firebase(itemRef);
-		var singleData = sync.$asObject();
-		return this.singleData;
+		$scope.singleData = sync.$asObject();
+
 	});
 	this.test = 'A Single Tea';
 	console.log(this.singleData);
