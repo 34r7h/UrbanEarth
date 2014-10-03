@@ -51,6 +51,22 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url: '/admin',
         templateUrl: 'partial/admin/main.admin.html'
     });
+    $stateProvider.state('main.customers', {
+        url: '/customers',
+        templateUrl: 'partial/customers/customers.html'
+    });
+    $stateProvider.state('main.customer', {
+        url: '/customers/:customer',
+        templateUrl: 'partial/customer/customer.html'
+    });
+    $stateProvider.state('main.orders', {
+        url: '/orders',
+        templateUrl: 'partial/orders/orders.html'
+    });
+    $stateProvider.state('main.order', {
+        url: '/orders/:order',
+        templateUrl: 'partial/order/order.html'
+    });
     /* Add New States Above */
     $urlRouterProvider.otherwise('/');
 

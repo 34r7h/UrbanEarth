@@ -1,17 +1,89 @@
-<div class="" ng-controller="AdminCtrl as admin">
-    Tea Name: <input ng-model="tea.name">
-    <hr class="large-12">
-    Tea Price: <input ng-model="tea.price">
-    <hr class="large-12">
-    Tea Wholesale Price: <input ng-model="tea.wholesalePrice">
-    <hr class="large-12">
-    Tea Description: <input ng-model="tea.description">
-    <hr class="large-12">
-    Tea Benefits: <input ng-model="tea.benefits">
-    <hr class="large-12">
-    Tea Images: <input ng-model="tea.images">
-    <hr class="large-12">
-    <button ng-click="main.api.create.tea(tea.name, tea.price, tea.wholesalePrice, tea.description, tea.benefits, tea.images)">Push it real good</button>
+<div class="" ng-controller="AdminCtrl as admin" ng-init="sections=['teas','programs','specials','customers','orders','images']">
+    <span ng-repeat="section in sections" ng-click="admin[section] = !admin[section]">{{section}} </span>
+
+    <section ng-show="admin.teas">
+        Tea Name: <input ng-model="tea.name">
+        <hr class="large-12">
+        Tea Price: <input ng-model="tea.price">
+        <hr class="large-12">
+        Tea Wholesale Price: <input ng-model="tea.wholesalePrice">
+        <hr class="large-12">
+        Tea Description: <input ng-model="tea.description">
+        <hr class="large-12">
+        Tea Benefits: <input ng-model="tea.benefits">
+        <hr class="large-12">
+        Tea Images: <input ng-model="tea.images">
+        <hr class="large-12">
+        <button ng-click="main.api.create.tea(tea.name, tea.price, tea.wholesalePrice, tea.description, tea.benefits, tea.images)">Tea it real good</button>
+    </section>
+
+    <section ng-show="admin.programs">
+        program Name: <input ng-model="program.name">
+        <hr class="large-12">
+        program Price: <input ng-model="program.price">
+        <hr class="large-12">
+        program Description: <input ng-model="program.description">
+        <hr class="large-12">
+        program Benefits: <input ng-model="program.benefits">
+        <hr class="large-12">
+        program Images: <input ng-model="program.images">
+        <hr class="large-12">
+        <button ng-click="main.api.create.program(program.name, program.price, program.description, program.benefits, program.images)">Program it real good</button>
+    </section>
+
+    <section ng-show="admin.specials">
+        special Name: <input ng-model="special.name">
+        <hr class="large-12">
+        special Price: <input ng-model="special.price">
+        <hr class="large-12">
+        special Description: <input ng-model="special.description">
+        <hr class="large-12">
+        special Benefits: <input ng-model="special.benefits">
+        <hr class="large-12">
+        special Images: <input ng-model="special.images">
+        <hr class="large-12">
+        <button ng-click="main.api.create.special(special.name, special.price, special.description, special.benefits, special.images)">special it real good</button>
+    </section>
+
+    <section ng-show="admin.customers">
+        customer first name: <input ng-model="customer.firstName">
+        <hr class="large-12">
+        customer last name: <input ng-model="customer.lastName">
+        <hr class="large-12">
+        customer email: <input ng-model="customer.email">
+        <hr class="large-12">
+        customer street number: <input ng-model="customer.streetNumber">
+        <hr class="large-12">
+        customer street name: <input ng-model="customer.streetName">
+        <hr class="large-12">
+        customer postal code: <input ng-model="customer.postalCode">
+        <hr class="large-12">
+        customer phone: <input ng-model="customer.phone">
+        <hr class="large-12">
+        customer image: <input ng-model="customer.image">
+        <hr class="large-12">
+        <button ng-click="main.api.create.customer(customer.firstName, customer.lastName, customer.email, customer.streetNumber, customer.streetName, customer.postalCode, customer.phone, customer.image)">customer it real good</button>
+    </section>
+
+    <section ng-show="admin.orders">
+        order number: <input ng-model="order.orderNumber">
+        <hr class="large-12">
+        order items: <input ng-model="order.items">
+        <hr class="large-12">
+        order total: <input ng-model="order.total">
+        <hr class="large-12">
+        <button ng-click="main.api.create.order(order.orderNumber, order.items, order.total)">order it real good</button>
+    </section>
+
+    <section ng-show="admin.images">
+        image Name: <input ng-model="image.name">
+        <hr class="large-12">
+        image description: <input ng-model="image.description">
+        <hr class="large-12">
+        <button ng-click="main.api.create.image(image.imageNumber, image.items, image.total)">image it real good</button>
+    </section>
+    
+    
 
 
 </div>
